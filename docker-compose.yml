@@ -7,5 +7,4 @@ services:
       context: .
     volumes:
       - /etc/localtime:/etc/localtime:ro
-    stdin_open: true
-    tty: true
+
