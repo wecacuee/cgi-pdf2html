@@ -1,3 +1,4 @@
+#!/bin/bash
 command -v docker || {
     echo "Install docker " && sudo apt-get install docker
 }

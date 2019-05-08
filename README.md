@@ -5,7 +5,7 @@ Uses poppler to convert pdftohtml.
 Usage:
 
 ``` shellsession
-$ docker-compose up cgiserver
+$ ./setup.sh
 ```
 
 Go to link `http://localhost:9797?url=<url>` to enter URL of pdf to be converted.
