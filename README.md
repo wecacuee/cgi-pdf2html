@@ -8,5 +8,5 @@ Usage:
 $ docker-compose up cgiserver
 ```
 
-Go to link http://localhost:9797 to enter URL of pdf to be converted.
+Go to link `http://localhost:9797?url=<url>` to enter URL of pdf to be converted.
 

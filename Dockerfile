@@ -12,6 +12,13 @@ RUN apt-get update \
 RUN mkdir -p /root/code/cgi-pdf2html
 COPY . /root/code/cgi-pdf2html
 WORKDIR /root/code/cgi-pdf2html
-RUN chmod u+x cgi-bin/pdf2html.py
+
+# Need to add a user because CGIHttpServer wants so
+# https://stackoverflow.com/questions/11021369/python-cgihttpserver-crashes-with-oserror-errno-13-permission-denied
+ARG USER=user
+RUN useradd $USER
+RUN chown -R $USER /root
+USER $USER
+RUN chmod 0775 /root/code/cgi-pdf2html/cgi-bin/pdf2html.py
 CMD ["python3", "-mhttp.server", "--cgi", "9797"]
 
