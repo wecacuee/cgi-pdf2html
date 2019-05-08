@@ -1,0 +1,11 @@
+version: '2.3'
+services:
+  cgiserver:
+    image: dhiman/cgi-pdf2html:18.04
+    network_mode: host
+    build:
+      context: .
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+    stdin_open: true
+    tty: true
